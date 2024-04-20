@@ -1,0 +1,34 @@
+otaviodafavela2 - senha
+
+--João Rafael Pendezza Medeiros
+--João Ricardo Frazão Romano Rocha
+--Otavio Matias Medeiros
+--Lucca Martins Silva
+--Matheus Amim Martins de Almeida
+
+
+--Tabel 1
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  complet_name VARCHAR(30) NOT NULL UNIQUE ,
+  email TEXT NOT NULL UNIQUE ,
+  password VARCHAR(20) NOT NULL ,
+  phone_number INTEGER NOT NULL ,
+  create_date TIMESTAMP NOT NULL
+);
+
+--Tabela 2
+CREATE TABLE  tweets (
+  text VARCHAR(100) NOT NULL,
+  post_date TIMESTAMP NOT NULL,
+  id SERIAL PRIMARY KEY
+);
+
+--Tabela de ligação 
+CREATE TABLE users_tweets (
+  id SERIAL PRIMARY KEY,
+  user_id SERIAL NOT NULL,
+  tweets_id SERIAL NOT NULL,
+  FOREING KEY(user_id) REFERENCES users(id),
+  FOREING KEY (tweets_id) REFERENCES tweets(id)
+);
