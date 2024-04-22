@@ -20,7 +20,7 @@ CREATE TABLE users (
 
 --Tabela 2
 CREATE TABLE  tweets (
-  text VARCHAR(100) NOT NULL,
+  texto VARCHAR(100) NOT NULL,
   post_date TIMESTAMP NOT NULL,
   idtweets SERIAL PRIMARY KEY
 );
